@@ -1,0 +1,63 @@
+module Cortina(clk,accion,direccion,pwm);
+
+input clk;
+input [1:0] accion;
+output reg [1:0] direccion;
+output reg pwm;
+
+reg pwm1;
+reg pwm2;
+reg [25:0] counter1;
+
+parameter SUBIR=2'b10,BAJAR=2'b01;
+
+always @(posedge clk)begin
+	counter1 = counter1+1;
+	if(counter1<50_000)begin
+		if(counter1 < 50_000)begin
+			pwm1=1;
+		end	
+      else begin 
+			pwm1=0;
+		end
+		if(counter1 < 42_500)begin
+			pwm2=1;
+		end	
+      else begin 
+			pwm2=0;
+		end
+	end
+	
+		
+	else begin
+		counter1 = 0;
+   end
+end
+	
+always @(accion)begin
+   
+	case(accion)
+	
+	   SUBIR:begin
+			direccion=2'b01;
+			pwm=pwm1;
+		
+		end
+	   
+		BAJAR:begin
+			direccion=2'b10;
+			pwm=pwm2;
+		
+		
+		end
+		
+		default: begin
+			direccion=2'b0;
+			pwm=1;
+		end
+
+		
+	endcase
+
+end	
+	endmodule 

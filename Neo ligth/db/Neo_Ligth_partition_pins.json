@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pwm_L",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_M",
+					"strict" : false
+				},
+				{
+					"name" : "ubicacion",
+					"strict" : false
+				},
+				{
+					"name" : "direccion[0]",
+					"strict" : false
+				},
+				{
+					"name" : "direccion[1]",
+					"strict" : false
+				},
+				{
+					"name" : "an[0]",
+					"strict" : false
+				},
+				{
+					"name" : "an[1]",
+					"strict" : false
+				},
+				{
+					"name" : "an[2]",
+					"strict" : false
+				},
+				{
+					"name" : "an[3]",
+					"strict" : false
+				},
+				{
+					"name" : "an[4]",
+					"strict" : false
+				},
+				{
+					"name" : "an[5]",
+					"strict" : false
+				},
+				{
+					"name" : "an[6]",
+					"strict" : false
+				},
+				{
+					"name" : "an[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "done",
+					"strict" : false
+				},
+				{
+					"name" : "Activada",
+					"strict" : false
+				},
+				{
+					"name" : "trigger",
+					"strict" : false
+				},
+				{
+					"name" : "Numero_p[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Numero_p[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Numero_p[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Numero_p[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Numero_p[4]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				},
+				{
+					"name" : "eco",
+					"strict" : false
+				},
+				{
+					"name" : "piro",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,100 @@
+module Control_Motor(clk,dato,init,accion,ubicacion);
+
+input clk;
+input [7:0] dato;
+input init;
+output  reg [1:0] accion=2'b0;
+output reg ubicacion=1'b0;
+
+reg [1:0] status;
+reg sub;
+reg baj;
+reg [27:0] tiempo_s;
+reg [27:0] tiempo_b;
+reg [25:0] counter;
+reg clk_s;
+reg done;
+parameter APAGADO=2'b00,SUBIR=2'b01,BAJAR=2'b10;
+
+initial begin
+status=APAGADO;
+sub=1'b0;
+baj=1'b0;
+tiempo_s=28'b0;
+tiempo_b=28'b0;
+counter=25'b0;
+clk_s=1'b0;
+end
+
+always@(posedge clk)begin //maquina de estados
+	if(!init)begin
+		status=APAGADO;
+	end
+	
+	case(status)
+		APAGADO:begin
+			sub=1'b0;
+			baj=1'b0;
+			if(dato==8'd65)status=SUBIR;
+			if(dato==8'd66)status=BAJAR;
+		end
+		SUBIR:begin
+			sub=1'b1;
+			baj=1'b0;
+			if(ubicacion==1)status=APAGADO;
+		end
+		BAJAR:begin
+			sub=1'b0;
+			baj=1'b1;
+			if(ubicacion==0)status=APAGADO;
+		end
+	
+	endcase
+end
+
+
+always@(posedge clk)begin 
+	if(!sub && !baj)begin
+		accion=2'b00;
+	end
+	if(init)begin
+		if(sub && !ubicacion)begin
+			accion=2'b10;
+			tiempo_s=tiempo_s+1;
+			if(tiempo_s==230_000_000)begin
+				ubicacion=1'b1;
+			end
+		end
+		else begin
+			tiempo_s=0;
+			
+		end
+		
+		
+		if(baj && ubicacion)begin
+			accion=2'b01;
+			tiempo_b=tiempo_b+1;
+			if(tiempo_b==195_000_000)begin
+				ubicacion=1'b0;
+			end
+		end
+		else begin
+			tiempo_b=0;
+		end
+	
+	end
+	else begin
+		accion=2'b00;
+		tiempo_s=0;
+		tiempo_b=0;
+		done=0;
+	end
+	
+	
+	
+end
+
+
+
+
+endmodule

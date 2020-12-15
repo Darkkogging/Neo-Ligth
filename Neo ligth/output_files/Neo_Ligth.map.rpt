@@ -1,0 +1,966 @@
+Analysis & Synthesis report for Neo_Ligth
+Mon Dec 14 19:52:32 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Neo_Ligth|Contador_aforo:comb_49|status
+  9. State Machine - |Neo_Ligth|Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|status
+ 10. State Machine - |Neo_Ligth|Alarma:comb_48|Alarma_FSM:comb_4|status
+ 11. State Machine - |Neo_Ligth|Control:comb_45|Control_Motor:M|status
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: Time:comb_44|Uart_rx:comb_3
+ 18. Parameter Settings for User Entity Instance: Time:comb_44|Obtener_H:ob
+ 19. Parameter Settings for User Entity Instance: Time:comb_44|Reloj:se
+ 20. Parameter Settings for User Entity Instance: Control:comb_45|Uart_rx:dat_con
+ 21. Parameter Settings for User Entity Instance: Control:comb_45|Control_Motor:M
+ 22. Parameter Settings for User Entity Instance: Cortina:comb_46
+ 23. Parameter Settings for User Entity Instance: Alarma:comb_48|Uart_rx:comb_3
+ 24. Parameter Settings for User Entity Instance: Alarma:comb_48|Obtener_Ha:ob
+ 25. Parameter Settings for User Entity Instance: Alarma:comb_48|Alarma_FSM:comb_4
+ 26. Parameter Settings for User Entity Instance: Contador_aforo:comb_49
+ 27. Parameter Settings for User Entity Instance: Contador_aforo:comb_49|Sensor_ultrasonico:comb_3
+ 28. Port Connectivity Checks: "Alarma:comb_48|Display_a:comb_5"
+ 29. Port Connectivity Checks: "Alarma:comb_48"
+ 30. Port Connectivity Checks: "Time:comb_44|Display:comb_4"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 14 19:52:31 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; Neo_Ligth                                   ;
+; Top-level Entity Name              ; Neo_Ligth                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,497                                       ;
+;     Total combinational functions  ; 1,466                                       ;
+;     Dedicated logic registers      ; 752                                         ;
+; Total registers                    ; 752                                         ;
+; Total pins                         ; 32                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10E22C8       ;                    ;
+; Top-level entity name                                            ; Neo_Ligth          ; Neo_Ligth          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; Neo_Ligth.v                      ; yes             ; User Verilog HDL File        ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v          ;         ;
+; time.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v               ;         ;
+; uart_rx.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/uart_rx.v            ;         ;
+; obtener_h.v                      ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_h.v          ;         ;
+; ascii2bcd_reloj.v                ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/ascii2bcd_reloj.v    ;         ;
+; ascii2bcd.v                      ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/ascii2bcd.v          ;         ;
+; reloj.v                          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v              ;         ;
+; display.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display.v            ;         ;
+; bcd2sseg.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/bcd2sseg.v           ;         ;
+; div_fre.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/div_fre.v            ;         ;
+; control.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control.v            ;         ;
+; control_motor.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v      ;         ;
+; control_luz.v                    ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_luz.v        ;         ;
+; cortina.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v            ;         ;
+; luz.v                            ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/luz.v                ;         ;
+; alarma.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v             ;         ;
+; obtener_ha.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_ha.v         ;         ;
+; alarma_fsm.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma_fsm.v         ;         ;
+; display_a.v                      ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display_a.v          ;         ;
+; contador_aforo.v                 ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v     ;         ;
+; sensor_ultrasonico.v             ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/sensor_ultrasonico.v ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,497     ;
+;                                             ;           ;
+; Total combinational functions               ; 1466      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 534       ;
+;     -- 3 input functions                    ; 341       ;
+;     -- <=2 input functions                  ; 591       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1174      ;
+;     -- arithmetic mode                      ; 292       ;
+;                                             ;           ;
+; Total registers                             ; 752       ;
+;     -- Dedicated logic registers            ; 752       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 32        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 313       ;
+; Total fan-out                               ; 6346      ;
+; Average fan-out                             ; 2.78      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                              ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name        ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
+; |Neo_Ligth                        ; 1466 (28)           ; 752 (2)                   ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |Neo_Ligth                                                    ; Neo_Ligth          ; work         ;
+;    |Alarma:comb_48|               ; 548 (12)            ; 298 (9)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48                                     ; Alarma             ; work         ;
+;       |Alarma_FSM:comb_4|         ; 158 (158)           ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Alarma_FSM:comb_4                   ; Alarma_FSM         ; work         ;
+;       |Ascii2BCD_reloj:re|        ; 63 (1)              ; 26 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re                  ; Ascii2BCD_reloj    ; work         ;
+;          |Ascii2BCD:dh|           ; 12 (12)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh     ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:dm|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dm     ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:ds|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:ds     ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:uh|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:uh     ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:um|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:um     ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:us|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:us     ; Ascii2BCD          ; work         ;
+;       |Display_a:comb_5|          ; 70 (27)             ; 32 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Display_a:comb_5                    ; Display_a          ; work         ;
+;          |Div_fre:div|            ; 36 (36)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Display_a:comb_5|Div_fre:div        ; Div_fre            ; work         ;
+;          |bcd2sseg:bcdtosseg|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Display_a:comb_5|bcd2sseg:bcdtosseg ; bcd2sseg           ; work         ;
+;       |Obtener_Ha:ob|             ; 189 (189)           ; 134 (134)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Obtener_Ha:ob                       ; Obtener_Ha         ; work         ;
+;       |Uart_rx:comb_3|            ; 56 (56)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Alarma:comb_48|Uart_rx:comb_3                      ; Uart_rx            ; work         ;
+;    |Contador_aforo:comb_49|       ; 100 (42)            ; 59 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Contador_aforo:comb_49                             ; Contador_aforo     ; work         ;
+;       |Sensor_ultrasonico:comb_3| ; 58 (58)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Contador_aforo:comb_49|Sensor_ultrasonico:comb_3   ; Sensor_ultrasonico ; work         ;
+;    |Control:comb_45|              ; 228 (0)             ; 106 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Control:comb_45                                    ; Control            ; work         ;
+;       |Control_Luz:L|             ; 28 (28)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Control:comb_45|Control_Luz:L                      ; Control_Luz        ; work         ;
+;       |Control_Motor:M|           ; 150 (150)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Control:comb_45|Control_Motor:M                    ; Control_Motor      ; work         ;
+;       |Uart_rx:dat_con|           ; 50 (50)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Control:comb_45|Uart_rx:dat_con                    ; Uart_rx            ; work         ;
+;    |Cortina:comb_46|              ; 46 (46)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Cortina:comb_46                                    ; Cortina            ; work         ;
+;    |Luz:comb_47|                  ; 49 (49)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Luz:comb_47                                        ; Luz                ; work         ;
+;    |Time:comb_44|                 ; 467 (0)             ; 253 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44                                       ; Time               ; work         ;
+;       |Ascii2BCD_reloj:re|        ; 62 (1)              ; 26 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re                    ; Ascii2BCD_reloj    ; work         ;
+;          |Ascii2BCD:dh|           ; 11 (11)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh       ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:dm|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dm       ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:ds|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:ds       ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:uh|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:uh       ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:um|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:um       ; Ascii2BCD          ; work         ;
+;          |Ascii2BCD:us|           ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:us       ; Ascii2BCD          ; work         ;
+;       |Display:comb_4|            ; 55 (25)             ; 14 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Display:comb_4                        ; Display            ; work         ;
+;          |Div_fre:div|            ; 23 (23)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Display:comb_4|Div_fre:div            ; Div_fre            ; work         ;
+;          |bcd2sseg:bcdtosseg|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Display:comb_4|bcd2sseg:bcdtosseg     ; bcd2sseg           ; work         ;
+;       |Obtener_H:ob|              ; 153 (153)           ; 106 (106)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Obtener_H:ob                          ; Obtener_H          ; work         ;
+;       |Reloj:se|                  ; 150 (150)           ; 77 (77)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Reloj:se                              ; Reloj              ; work         ;
+;       |Uart_rx:comb_3|            ; 47 (47)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Neo_Ligth|Time:comb_44|Uart_rx:comb_3                        ; Uart_rx            ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |Neo_Ligth|Contador_aforo:comb_49|status                                            ;
++---------------------+------------+------------+---------------------+------------------+------------+
+; Name                ; status.RES ; status.PIR ; status.ULTRA_SONICO ; status.ESPERANDO ; status.ADD ;
++---------------------+------------+------------+---------------------+------------------+------------+
+; status.ESPERANDO    ; 0          ; 0          ; 0                   ; 0                ; 0          ;
+; status.ULTRA_SONICO ; 0          ; 0          ; 1                   ; 1                ; 0          ;
+; status.PIR          ; 0          ; 1          ; 0                   ; 1                ; 0          ;
+; status.RES          ; 1          ; 0          ; 0                   ; 1                ; 0          ;
+; status.ADD          ; 0          ; 0          ; 0                   ; 1                ; 1          ;
++---------------------+------------+------------+---------------------+------------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------+
+; State Machine - |Neo_Ligth|Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|status  ;
++------------------+-----------------+-----------------+------------------+-----------+
+; Name             ; status.ENVIANDO ; status.SENSANDO ; status.ESPERANDO ; status.00 ;
++------------------+-----------------+-----------------+------------------+-----------+
+; status.00        ; 0               ; 0               ; 0                ; 0         ;
+; status.ESPERANDO ; 0               ; 0               ; 1                ; 1         ;
+; status.SENSANDO  ; 0               ; 1               ; 0                ; 1         ;
+; status.ENVIANDO  ; 1               ; 0               ; 0                ; 1         ;
++------------------+-----------------+-----------------+------------------+-----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |Neo_Ligth|Alarma:comb_48|Alarma_FSM:comb_4|status         ;
++--------------------+--------------------+----------------+-----------------+
+; Name               ; status.DESACTIVADA ; status.SONANDO ; status.ACTIVADA ;
++--------------------+--------------------+----------------+-----------------+
+; status.DESACTIVADA ; 0                  ; 0              ; 0               ;
+; status.ACTIVADA    ; 1                  ; 0              ; 1               ;
+; status.SONANDO     ; 1                  ; 1              ; 0               ;
++--------------------+--------------------+----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------+
+; State Machine - |Neo_Ligth|Control:comb_45|Control_Motor:M|status ;
++----------------+----------------+--------------+------------------+
+; Name           ; status.APAGADO ; status.BAJAR ; status.SUBIR     ;
++----------------+----------------+--------------+------------------+
+; status.APAGADO ; 0              ; 0            ; 0                ;
+; status.SUBIR   ; 1              ; 0            ; 1                ;
+; status.BAJAR   ; 1              ; 1            ; 0                ;
++----------------+----------------+--------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                              ;
++-----------------------------------------------------------+---------------------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                                  ;
++-----------------------------------------------------------+---------------------------------------------------------------------+
+; Alarma:comb_48|Alarma_FSM:comb_4|accion[0]                ; Stuck at GND due to stuck port data_in                              ;
+; Cortina:comb_46|pwm1                                      ; Stuck at VCC due to stuck port data_in                              ;
+; Time:comb_44|Display:comb_4|an[6,7]                       ; Stuck at VCC due to stuck port data_in                              ;
+; Control:comb_45|Control_Luz:L|dutty[0..3]                 ; Stuck at GND due to stuck port data_in                              ;
+; Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|trig     ; Merged with Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|reset  ;
+; Alarma:comb_48|Alarma_FSM:comb_4|dutty[1..3]              ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|dutty[0]               ;
+; Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dm|done       ; Merged with Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh|done     ;
+; Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:ds|done       ; Merged with Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh|done     ;
+; Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:uh|done       ; Merged with Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh|done     ;
+; Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:um|done       ; Merged with Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh|done     ;
+; Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:us|done       ; Merged with Alarma:comb_48|Ascii2BCD_reloj:re|Ascii2BCD:dh|done     ;
+; Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dm|done         ; Merged with Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh|done       ;
+; Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:ds|done         ; Merged with Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh|done       ;
+; Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:uh|done         ; Merged with Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh|done       ;
+; Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:um|done         ; Merged with Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh|done       ;
+; Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:us|done         ; Merged with Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:dh|done       ;
+; Alarma:comb_48|counter[27]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[27]            ;
+; Contador_aforo:comb_49|counter[27]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[27]            ;
+; counter[27]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[27]            ;
+; Alarma:comb_48|counter[26]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[26]            ;
+; Contador_aforo:comb_49|counter[26]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[26]            ;
+; counter[26]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[26]            ;
+; Alarma:comb_48|counter[25]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[25]            ;
+; Contador_aforo:comb_49|counter[25]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[25]            ;
+; counter[25]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[25]            ;
+; Alarma:comb_48|counter[24]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[24]            ;
+; Contador_aforo:comb_49|counter[24]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[24]            ;
+; counter[24]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[24]            ;
+; Alarma:comb_48|counter[23]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[23]            ;
+; Contador_aforo:comb_49|counter[23]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[23]            ;
+; counter[23]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[23]            ;
+; Alarma:comb_48|counter[22]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[22]            ;
+; Contador_aforo:comb_49|counter[22]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[22]            ;
+; counter[22]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[22]            ;
+; Alarma:comb_48|counter[21]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[21]            ;
+; Contador_aforo:comb_49|counter[21]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[21]            ;
+; counter[21]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[21]            ;
+; Alarma:comb_48|counter[20]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[20]            ;
+; Contador_aforo:comb_49|counter[20]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[20]            ;
+; counter[20]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[20]            ;
+; Alarma:comb_48|counter[19]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[19]            ;
+; Contador_aforo:comb_49|counter[19]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[19]            ;
+; counter[19]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[19]            ;
+; Alarma:comb_48|counter[18]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[18]            ;
+; Contador_aforo:comb_49|counter[18]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[18]            ;
+; counter[18]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[18]            ;
+; Alarma:comb_48|counter[17]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[17]            ;
+; Contador_aforo:comb_49|counter[17]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[17]            ;
+; counter[17]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[17]            ;
+; Alarma:comb_48|counter[16]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[16]            ;
+; Contador_aforo:comb_49|counter[16]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[16]            ;
+; counter[16]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[16]            ;
+; Alarma:comb_48|counter[15]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[15]            ;
+; Contador_aforo:comb_49|counter[15]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[15]            ;
+; counter[15]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[15]            ;
+; Alarma:comb_48|counter[14]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[14]            ;
+; Contador_aforo:comb_49|counter[14]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[14]            ;
+; counter[14]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[14]            ;
+; Alarma:comb_48|counter[13]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[13]            ;
+; Contador_aforo:comb_49|counter[13]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[13]            ;
+; counter[13]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[13]            ;
+; Alarma:comb_48|counter[12]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[12]            ;
+; Contador_aforo:comb_49|counter[12]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[12]            ;
+; counter[12]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[12]            ;
+; Alarma:comb_48|counter[11]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[11]            ;
+; Contador_aforo:comb_49|counter[11]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[11]            ;
+; counter[11]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[11]            ;
+; Alarma:comb_48|counter[10]                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[10]            ;
+; Contador_aforo:comb_49|counter[10]                        ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[10]            ;
+; counter[10]                                               ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[10]            ;
+; Alarma:comb_48|counter[9]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[9]             ;
+; Contador_aforo:comb_49|counter[9]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[9]             ;
+; counter[9]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[9]             ;
+; Alarma:comb_48|counter[8]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[8]             ;
+; Contador_aforo:comb_49|counter[8]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[8]             ;
+; counter[8]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[8]             ;
+; Alarma:comb_48|counter[7]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[7]             ;
+; Contador_aforo:comb_49|counter[7]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[7]             ;
+; counter[7]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[7]             ;
+; Alarma:comb_48|counter[6]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[6]             ;
+; Contador_aforo:comb_49|counter[6]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[6]             ;
+; counter[6]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[6]             ;
+; Alarma:comb_48|counter[5]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[5]             ;
+; Contador_aforo:comb_49|counter[5]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[5]             ;
+; counter[5]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[5]             ;
+; Alarma:comb_48|counter[4]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[4]             ;
+; Contador_aforo:comb_49|counter[4]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[4]             ;
+; counter[4]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[4]             ;
+; Alarma:comb_48|counter[3]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[3]             ;
+; Contador_aforo:comb_49|counter[3]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[3]             ;
+; counter[3]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[3]             ;
+; Alarma:comb_48|counter[2]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[2]             ;
+; Contador_aforo:comb_49|counter[2]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[2]             ;
+; counter[2]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[2]             ;
+; Alarma:comb_48|counter[1]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[1]             ;
+; Contador_aforo:comb_49|counter[1]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[1]             ;
+; counter[1]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[1]             ;
+; Alarma:comb_48|counter[0]                                 ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[0]             ;
+; Contador_aforo:comb_49|counter[0]                         ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[0]             ;
+; counter[0]                                                ; Merged with Alarma:comb_48|Alarma_FSM:comb_4|counter[0]             ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[15]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[15] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[14]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[14] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[13]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[13] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[12]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[12] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[11]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[11] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[10]       ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[10] ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[9]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[9]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[8]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[8]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[7]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[7]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[6]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[6]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[5]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[5]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[4]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[4]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[3]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[3]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[2]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[2]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[1]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[1]  ;
+; Time:comb_44|Display:comb_4|Div_fre:div|counter[0]        ; Merged with Alarma:comb_48|Display_a:comb_5|Div_fre:div|counter[0]  ;
+; Control:comb_45|Uart_rx:dat_con|contador[8]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[8]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[8]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[8]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[7]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[7]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[7]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[7]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[6]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[6]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[6]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[6]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[5]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[5]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[5]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[5]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[4]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[4]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[4]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[4]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[3]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[3]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[3]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[3]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[2]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[2]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[2]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[2]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[1]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[1]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[1]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[1]               ;
+; Control:comb_45|Uart_rx:dat_con|contador[0]               ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[0]               ;
+; Time:comb_44|Uart_rx:comb_3|contador[0]                   ; Merged with Alarma:comb_48|Uart_rx:comb_3|contador[0]               ;
+; Time:comb_44|Obtener_H:ob|counter[27]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[27]                ;
+; Time:comb_44|Obtener_H:ob|counter[26]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[26]                ;
+; Time:comb_44|Obtener_H:ob|counter[25]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[25]                ;
+; Time:comb_44|Obtener_H:ob|counter[24]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[24]                ;
+; Time:comb_44|Obtener_H:ob|counter[23]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[23]                ;
+; Time:comb_44|Obtener_H:ob|counter[22]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[22]                ;
+; Time:comb_44|Obtener_H:ob|counter[21]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[21]                ;
+; Time:comb_44|Obtener_H:ob|counter[20]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[20]                ;
+; Time:comb_44|Obtener_H:ob|counter[19]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[19]                ;
+; Time:comb_44|Obtener_H:ob|counter[18]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[18]                ;
+; Time:comb_44|Obtener_H:ob|counter[17]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[17]                ;
+; Time:comb_44|Obtener_H:ob|counter[16]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[16]                ;
+; Time:comb_44|Obtener_H:ob|counter[15]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[15]                ;
+; Time:comb_44|Obtener_H:ob|counter[14]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[14]                ;
+; Time:comb_44|Obtener_H:ob|counter[13]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[13]                ;
+; Time:comb_44|Obtener_H:ob|counter[12]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[12]                ;
+; Time:comb_44|Obtener_H:ob|counter[11]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[11]                ;
+; Time:comb_44|Obtener_H:ob|counter[10]                     ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[10]                ;
+; Time:comb_44|Obtener_H:ob|counter[9]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[9]                 ;
+; Time:comb_44|Obtener_H:ob|counter[8]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[8]                 ;
+; Time:comb_44|Obtener_H:ob|counter[7]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[7]                 ;
+; Time:comb_44|Obtener_H:ob|counter[6]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[6]                 ;
+; Time:comb_44|Obtener_H:ob|counter[5]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[5]                 ;
+; Time:comb_44|Obtener_H:ob|counter[4]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[4]                 ;
+; Time:comb_44|Obtener_H:ob|counter[3]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[3]                 ;
+; Time:comb_44|Obtener_H:ob|counter[2]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[2]                 ;
+; Time:comb_44|Obtener_H:ob|counter[1]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[1]                 ;
+; Time:comb_44|Obtener_H:ob|counter[0]                      ; Merged with Alarma:comb_48|Obtener_Ha:ob|counter[0]                 ;
+; Alarma:comb_48|Alarma_FSM:comb_4|dutty[0]                 ; Stuck at GND due to stuck port data_in                              ;
+; Cortina:comb_46|counter1[22..25]                          ; Stuck at GND due to stuck port data_in                              ;
+; Alarma:comb_48|Alarma_FSM:comb_4|counter[26,27]           ; Stuck at GND due to stuck port data_in                              ;
+; Cortina:comb_46|counter1[19..21]                          ; Stuck at GND due to stuck port data_in                              ;
+; Contador_aforo:comb_49|status~7                           ; Lost fanout                                                         ;
+; Contador_aforo:comb_49|status~8                           ; Lost fanout                                                         ;
+; Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|status~6 ; Lost fanout                                                         ;
+; Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|status~7 ; Lost fanout                                                         ;
+; Alarma:comb_48|Alarma_FSM:comb_4|status.DESACTIVADA       ; Lost fanout                                                         ;
+; Cortina:comb_46|counter1[16..18]                          ; Stuck at GND due to stuck port data_in                              ;
+; Total Number of Removed Registers = 186                   ;                                                                     ;
++-----------------------------------------------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                            ;
++------------------------------+---------------------------+-------------------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register                      ;
++------------------------------+---------------------------+-------------------------------------------------------------+
+; Cortina:comb_46|counter1[25] ; Stuck at GND              ; Cortina:comb_46|counter1[21], Cortina:comb_46|counter1[20], ;
+;                              ; due to stuck port data_in ; Cortina:comb_46|counter1[19], Cortina:comb_46|counter1[16], ;
+;                              ;                           ; Cortina:comb_46|counter1[17], Cortina:comb_46|counter1[18]  ;
++------------------------------+---------------------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 752   ;
+; Number of registers using Synchronous Clear  ; 88    ;
+; Number of registers using Synchronous Load   ; 25    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 336   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; Alarma:comb_48|Display_a:comb_5|num[0]    ; 7       ;
+; Alarma:comb_48|Display_a:comb_5|num[1]    ; 7       ;
+; Alarma:comb_48|Display_a:comb_5|num[2]    ; 7       ;
+; Alarma:comb_48|Display_a:comb_5|num[3]    ; 7       ;
+; Time:comb_44|Display:comb_4|num[0]        ; 7       ;
+; Time:comb_44|Display:comb_4|num[1]        ; 7       ;
+; Time:comb_44|Display:comb_4|num[2]        ; 7       ;
+; Time:comb_44|Display:comb_4|num[3]        ; 7       ;
+; Contador_aforo:comb_49|Numero_p[0]        ; 4       ;
+; Alarma:comb_48|init                       ; 104     ;
+; init_Time                                 ; 106     ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[5]      ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[4]      ; 4       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[13]     ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[12]     ; 4       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[29]     ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[28]     ; 4       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[37]     ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[36]     ; 4       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[44]     ; 4       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[45]     ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[21]     ; 5       ;
+; Alarma:comb_48|Obtener_Ha:ob|hora[20]     ; 4       ;
+; Control:comb_45|Uart_rx:dat_con|bit_start ; 3       ;
+; Alarma:comb_48|Uart_rx:comb_3|bit_start   ; 3       ;
+; Time:comb_44|Obtener_H:ob|hora[29]        ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[28]        ; 4       ;
+; Time:comb_44|Obtener_H:ob|hora[36]        ; 4       ;
+; Time:comb_44|Obtener_H:ob|hora[37]        ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[44]        ; 4       ;
+; Time:comb_44|Obtener_H:ob|hora[45]        ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[21]        ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[20]        ; 4       ;
+; Time:comb_44|Obtener_H:ob|hora[5]         ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[4]         ; 4       ;
+; Time:comb_44|Obtener_H:ob|hora[13]        ; 5       ;
+; Time:comb_44|Obtener_H:ob|hora[12]        ; 4       ;
+; Time:comb_44|Uart_rx:comb_3|bit_start     ; 3       ;
+; Total number of inverted registers = 38   ;         ;
++-------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Neo_Ligth|Control:comb_45|Uart_rx:dat_con|dato[7]                    ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |Neo_Ligth|Control:comb_45|Control_Motor:M|tiempo_s[20]               ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |Neo_Ligth|Control:comb_45|Control_Motor:M|tiempo_b[19]               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Neo_Ligth|Alarma:comb_48|Uart_rx:comb_3|dato[5]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Neo_Ligth|Time:comb_44|Uart_rx:comb_3|dato[0]                        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Neo_Ligth|Control:comb_45|Control_Motor:M|accion[1]                  ;
+; 256:1              ; 12 bits   ; 2040 LEs      ; 192 LEs              ; 1848 LEs               ; Yes        ; |Neo_Ligth|Control:comb_45|Control_Luz:L|dutty[13]                    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |Neo_Ligth|Time:comb_44|Display:comb_4|num[0]                         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Neo_Ligth|Alarma:comb_48|Display_a:comb_5|num[0]                     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Neo_Ligth|Control:comb_45|Control_Motor:M|Selector2                  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |Neo_Ligth|Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|Selector3 ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Neo_Ligth|Alarma:comb_48|Alarma_FSM:comb_4|Selector2                 ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |Neo_Ligth|Contador_aforo:comb_49|Selector0                           ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |Neo_Ligth|Contador_aforo:comb_49|Selector4                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Time:comb_44|Uart_rx:comb_3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; ESPERA         ; 0     ; Unsigned Binary                                 ;
+; RECIBIR        ; 1     ; Unsigned Binary                                 ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Time:comb_44|Obtener_H:ob ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; ESPERANDO      ; 0     ; Unsigned Binary                               ;
+; RECIBIR        ; 1     ; Unsigned Binary                               ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Time:comb_44|Reloj:se ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; CONFIGURAR     ; 0     ; Unsigned Binary                           ;
+; CONTEO         ; 1     ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:comb_45|Uart_rx:dat_con ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; ESPERA         ; 0     ; Unsigned Binary                                     ;
+; RECIBIR        ; 1     ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:comb_45|Control_Motor:M ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; APAGADO        ; 00    ; Unsigned Binary                                     ;
+; SUBIR          ; 01    ; Unsigned Binary                                     ;
+; BAJAR          ; 10    ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cortina:comb_46 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; SUBIR          ; 10    ; Unsigned Binary                     ;
+; BAJAR          ; 01    ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alarma:comb_48|Uart_rx:comb_3 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; ESPERA         ; 0     ; Unsigned Binary                                   ;
+; RECIBIR        ; 1     ; Unsigned Binary                                   ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alarma:comb_48|Obtener_Ha:ob ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; ESPERANDO      ; 0     ; Unsigned Binary                                  ;
+; RECIBIR        ; 1     ; Unsigned Binary                                  ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alarma:comb_48|Alarma_FSM:comb_4 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; DESACTIVADA    ; 00    ; Unsigned Binary                                      ;
+; ACTIVADA       ; 01    ; Unsigned Binary                                      ;
+; SONANDO        ; 10    ; Unsigned Binary                                      ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Contador_aforo:comb_49 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; ESPERANDO      ; 000   ; Unsigned Binary                            ;
+; ULTRA_SONICO   ; 001   ; Unsigned Binary                            ;
+; PIR            ; 010   ; Unsigned Binary                            ;
+; RES            ; 011   ; Unsigned Binary                            ;
+; ADD            ; 100   ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Contador_aforo:comb_49|Sensor_ultrasonico:comb_3 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; TRIGGER        ; 00    ; Unsigned Binary                                                      ;
+; ESPERANDO      ; 01    ; Unsigned Binary                                                      ;
+; SENSANDO       ; 10    ; Unsigned Binary                                                      ;
+; ENVIANDO       ; 11    ; Unsigned Binary                                                      ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Alarma:comb_48|Display_a:comb_5"                                                                                                                ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                          ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; dato ; Input ; Warning  ; Input port expression (24 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "dato[31..24]" will be connected to GND. ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Alarma:comb_48"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; init ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Time:comb_44|Display:comb_4"                                                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                          ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; dato ; Input ; Warning  ; Input port expression (24 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "dato[31..24]" will be connected to GND. ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 32                          ;
+; cycloneiii_ff         ; 752                         ;
+;     ENA               ; 271                         ;
+;     ENA SCLR          ; 62                          ;
+;     ENA SLD           ; 3                           ;
+;     SCLR              ; 26                          ;
+;     SLD               ; 22                          ;
+;     plain             ; 368                         ;
+; cycloneiii_lcell_comb ; 1468                        ;
+;     arith             ; 292                         ;
+;         2 data inputs ; 251                         ;
+;         3 data inputs ; 41                          ;
+;     normal            ; 1176                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 309                         ;
+;         3 data inputs ; 300                         ;
+;         4 data inputs ; 534                         ;
+;                       ;                             ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 4.54                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Dec 14 19:51:49 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Neo_Ligth -c Neo_Ligth
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file neo_ligth.v
+    Info (12023): Found entity 1: Neo_Ligth File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(47): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(48): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(49): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(50): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 50
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(51): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at Neo_Ligth.v(52): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 52
+Info (12127): Elaborating entity "Neo_Ligth" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Neo_Ligth.v(41): truncated value with size 32 to match size of target (1) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 41
+Warning (10230): Verilog HDL assignment warning at Neo_Ligth.v(44): truncated value with size 32 to match size of target (1) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 44
+Warning (10230): Verilog HDL assignment warning at Neo_Ligth.v(56): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 56
+Warning (12125): Using design file time.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Time File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at time.v(17): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at time.v(21): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 21
+Info (12128): Elaborating entity "Time" for hierarchy "Time:comb_44" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 47
+Warning (12125): Using design file uart_rx.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Uart_rx File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/uart_rx.v Line: 1
+Info (12128): Elaborating entity "Uart_rx" for hierarchy "Time:comb_44|Uart_rx:comb_3" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 17
+Warning (10230): Verilog HDL assignment warning at uart_rx.v(58): truncated value with size 32 to match size of target (9) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/uart_rx.v Line: 58
+Warning (10230): Verilog HDL assignment warning at uart_rx.v(72): truncated value with size 32 to match size of target (5) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/uart_rx.v Line: 72
+Warning (10230): Verilog HDL assignment warning at uart_rx.v(79): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/uart_rx.v Line: 79
+Warning (12125): Using design file obtener_h.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Obtener_H File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_h.v Line: 1
+Info (12128): Elaborating entity "Obtener_H" for hierarchy "Time:comb_44|Obtener_H:ob" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 18
+Warning (10230): Verilog HDL assignment warning at obtener_h.v(33): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_h.v Line: 33
+Warning (10230): Verilog HDL assignment warning at obtener_h.v(77): truncated value with size 32 to match size of target (5) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_h.v Line: 77
+Warning (12125): Using design file ascii2bcd_reloj.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Ascii2BCD_reloj File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/ascii2bcd_reloj.v Line: 1
+Info (12128): Elaborating entity "Ascii2BCD_reloj" for hierarchy "Time:comb_44|Ascii2BCD_reloj:re" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 19
+Warning (12125): Using design file ascii2bcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Ascii2BCD File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/ascii2bcd.v Line: 1
+Info (12128): Elaborating entity "Ascii2BCD" for hierarchy "Time:comb_44|Ascii2BCD_reloj:re|Ascii2BCD:us" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/ascii2bcd_reloj.v Line: 17
+Warning (12125): Using design file reloj.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Reloj File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 1
+Info (12128): Elaborating entity "Reloj" for hierarchy "Time:comb_44|Reloj:se" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 20
+Warning (10230): Verilog HDL assignment warning at reloj.v(55): truncated value with size 32 to match size of target (26) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 55
+Warning (10230): Verilog HDL assignment warning at reloj.v(73): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 73
+Warning (10230): Verilog HDL assignment warning at reloj.v(76): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 76
+Warning (10230): Verilog HDL assignment warning at reloj.v(80): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 80
+Warning (10230): Verilog HDL assignment warning at reloj.v(84): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 84
+Warning (10230): Verilog HDL assignment warning at reloj.v(88): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 88
+Warning (10230): Verilog HDL assignment warning at reloj.v(92): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/reloj.v Line: 92
+Warning (12125): Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Display File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display.v Line: 1
+Info (12128): Elaborating entity "Display" for hierarchy "Time:comb_44|Display:comb_4" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/time.v Line: 21
+Warning (10230): Verilog HDL assignment warning at display.v(41): truncated value with size 32 to match size of target (3) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display.v Line: 41
+Warning (12125): Using design file bcd2sseg.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: bcd2sseg File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/bcd2sseg.v Line: 1
+Info (12128): Elaborating entity "bcd2sseg" for hierarchy "Time:comb_44|Display:comb_4|bcd2sseg:bcdtosseg" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display.v Line: 21
+Warning (12125): Using design file div_fre.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Div_fre File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/div_fre.v Line: 1
+Info (12128): Elaborating entity "Div_fre" for hierarchy "Time:comb_44|Display:comb_4|Div_fre:div" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display.v Line: 22
+Warning (10230): Verilog HDL assignment warning at div_fre.v(8): truncated value with size 32 to match size of target (16) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/div_fre.v Line: 8
+Warning (12125): Using design file control.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Control File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control.v Line: 1
+Info (12128): Elaborating entity "Control" for hierarchy "Control:comb_45" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 48
+Warning (12125): Using design file control_motor.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Control_Motor File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 1
+Info (12128): Elaborating entity "Control_Motor" for hierarchy "Control:comb_45|Control_Motor:M" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control.v Line: 12
+Warning (10036): Verilog HDL or VHDL warning at control_motor.v(14): object "counter" assigned a value but never read File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 14
+Warning (10036): Verilog HDL or VHDL warning at control_motor.v(15): object "clk_s" assigned a value but never read File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 15
+Warning (10036): Verilog HDL or VHDL warning at control_motor.v(16): object "done" assigned a value but never read File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 16
+Warning (10230): Verilog HDL assignment warning at control_motor.v(63): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 63
+Warning (10230): Verilog HDL assignment warning at control_motor.v(76): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_motor.v Line: 76
+Warning (12125): Using design file control_luz.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Control_Luz File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control_luz.v Line: 1
+Info (12128): Elaborating entity "Control_Luz" for hierarchy "Control:comb_45|Control_Luz:L" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/control.v Line: 13
+Warning (12125): Using design file cortina.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Cortina File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v Line: 1
+Info (12128): Elaborating entity "Cortina" for hierarchy "Cortina:comb_46" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 49
+Warning (10230): Verilog HDL assignment warning at cortina.v(15): truncated value with size 32 to match size of target (26) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at cortina.v(43): variable "pwm1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at cortina.v(49): variable "pwm2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v Line: 49
+Info (10264): Verilog HDL Case Statement information at cortina.v(39): all case item expressions in this case statement are onehot File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/cortina.v Line: 39
+Warning (12125): Using design file luz.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Luz File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/luz.v Line: 1
+Info (12128): Elaborating entity "Luz" for hierarchy "Luz:comb_47" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 50
+Warning (10230): Verilog HDL assignment warning at luz.v(19): truncated value with size 32 to match size of target (16) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/luz.v Line: 19
+Warning (12125): Using design file alarma.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Alarma File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at alarma.v(25): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at alarma.v(28): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at alarma.v(29): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 29
+Info (12128): Elaborating entity "Alarma" for hierarchy "Alarma:comb_48" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 51
+Warning (10230): Verilog HDL assignment warning at alarma.v(33): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 33
+Warning (10230): Verilog HDL assignment warning at alarma.v(49): truncated value with size 32 to match size of target (7) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 49
+Warning (12125): Using design file obtener_ha.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Obtener_Ha File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_ha.v Line: 1
+Info (12128): Elaborating entity "Obtener_Ha" for hierarchy "Alarma:comb_48|Obtener_Ha:ob" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 26
+Warning (10230): Verilog HDL assignment warning at obtener_ha.v(33): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_ha.v Line: 33
+Warning (10230): Verilog HDL assignment warning at obtener_ha.v(77): truncated value with size 32 to match size of target (5) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/obtener_ha.v Line: 77
+Warning (12125): Using design file alarma_fsm.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Alarma_FSM File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma_fsm.v Line: 1
+Info (12128): Elaborating entity "Alarma_FSM" for hierarchy "Alarma:comb_48|Alarma_FSM:comb_4" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 28
+Warning (10036): Verilog HDL or VHDL warning at alarma_fsm.v(14): object "des" assigned a value but never read File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma_fsm.v Line: 14
+Warning (10230): Verilog HDL assignment warning at alarma_fsm.v(51): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma_fsm.v Line: 51
+Warning (10230): Verilog HDL assignment warning at alarma_fsm.v(80): truncated value with size 32 to match size of target (12) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma_fsm.v Line: 80
+Warning (12125): Using design file display_a.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Display_a File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display_a.v Line: 1
+Info (12128): Elaborating entity "Display_a" for hierarchy "Alarma:comb_48|Display_a:comb_5" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/alarma.v Line: 29
+Warning (10230): Verilog HDL assignment warning at display_a.v(41): truncated value with size 32 to match size of target (3) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/display_a.v Line: 41
+Warning (12125): Using design file contador_aforo.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Contador_aforo File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at contador_aforo.v(21): instance has no name File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 21
+Info (12128): Elaborating entity "Contador_aforo" for hierarchy "Contador_aforo:comb_49" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/Neo_Ligth.v Line: 52
+Warning (10230): Verilog HDL assignment warning at contador_aforo.v(30): truncated value with size 32 to match size of target (28) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 30
+Warning (10230): Verilog HDL assignment warning at contador_aforo.v(93): truncated value with size 32 to match size of target (3) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 93
+Warning (10230): Verilog HDL assignment warning at contador_aforo.v(106): truncated value with size 32 to match size of target (3) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 106
+Warning (10230): Verilog HDL assignment warning at contador_aforo.v(108): truncated value with size 32 to match size of target (5) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 108
+Warning (10230): Verilog HDL assignment warning at contador_aforo.v(111): truncated value with size 32 to match size of target (5) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 111
+Warning (12125): Using design file sensor_ultrasonico.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Sensor_ultrasonico File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/sensor_ultrasonico.v Line: 1
+Info (12128): Elaborating entity "Sensor_ultrasonico" for hierarchy "Contador_aforo:comb_49|Sensor_ultrasonico:comb_3" File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/contador_aforo.v Line: 21
+Warning (10230): Verilog HDL assignment warning at sensor_ultrasonico.v(27): truncated value with size 32 to match size of target (8) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/sensor_ultrasonico.v Line: 27
+Warning (10230): Verilog HDL assignment warning at sensor_ultrasonico.v(74): truncated value with size 32 to match size of target (4) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/sensor_ultrasonico.v Line: 74
+Warning (10230): Verilog HDL assignment warning at sensor_ultrasonico.v(87): truncated value with size 32 to match size of target (16) File: C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/sensor_ultrasonico.v Line: 87
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/output_files/Neo_Ligth.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1580 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 1548 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon Dec 14 19:52:32 2020
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:00:36
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/lenovo/Desktop/digital/Verilog/Proyecto/2.1/Neo ligth/output_files/Neo_Ligth.map.smsg.
+
+

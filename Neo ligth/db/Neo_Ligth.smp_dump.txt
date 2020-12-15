@@ -1,0 +1,27 @@
+
+State Machine - |Neo_Ligth|Contador_aforo:comb_49|status
+Name status.RES status.PIR status.ULTRA_SONICO status.ESPERANDO status.ADD 
+status.ESPERANDO 0 0 0 0 0 
+status.ULTRA_SONICO 0 0 1 1 0 
+status.PIR 0 1 0 1 0 
+status.RES 1 0 0 1 0 
+status.ADD 0 0 0 1 1 
+
+State Machine - |Neo_Ligth|Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|status
+Name status.ENVIANDO status.SENSANDO status.ESPERANDO status.00 
+status.00 0 0 0 0 
+status.ESPERANDO 0 0 1 1 
+status.SENSANDO 0 1 0 1 
+status.ENVIANDO 1 0 0 1 
+
+State Machine - |Neo_Ligth|Alarma:comb_48|Alarma_FSM:comb_4|status
+Name status.DESACTIVADA status.SONANDO status.ACTIVADA 
+status.DESACTIVADA 0 0 0 
+status.ACTIVADA 1 0 1 
+status.SONANDO 1 1 0 
+
+State Machine - |Neo_Ligth|Control:comb_45|Control_Motor:M|status
+Name status.APAGADO status.BAJAR status.SUBIR 
+status.APAGADO 0 0 0 
+status.SUBIR 1 0 1 
+status.BAJAR 1 1 0 

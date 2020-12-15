@@ -1,0 +1,21 @@
+module Neo_Ligth(clk,rx,init,pwm_L,pwm_M,ubicacion,direccion);
+input clk;
+input rx;
+input init;
+output pwm_L;
+output pwm_M;
+output ubicacion;
+output [1:0] direccion;
+
+wire [1:0] accion;
+wire [15:0] dutty;
+
+
+ 
+Control (clk,rx,init,accion,dutty,ubicacion);
+Cortina (clk,accion,direccion,pwm_M);
+Luz (clk,dutty,pwm_L);
+
+
+
+endmodule

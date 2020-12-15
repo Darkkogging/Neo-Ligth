@@ -1,0 +1,509 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Time:comb_44|Reloj:se|clk_s'
+Slack : -7.615
+TNS   : -218.929
+
+Type  : Slow 1200mV 85C Model Setup 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -7.352
+TNS   : -645.959
+
+Type  : Slow 1200mV 85C Model Setup 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -7.251
+TNS   : -586.465
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -7.115
+TNS   : -1203.304
+
+Type  : Slow 1200mV 85C Model Setup 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -5.821
+TNS   : -105.887
+
+Type  : Slow 1200mV 85C Model Setup 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -5.274
+TNS   : -105.515
+
+Type  : Slow 1200mV 85C Model Setup 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -4.339
+TNS   : -96.585
+
+Type  : Slow 1200mV 85C Model Setup 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -4.317
+TNS   : -93.209
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_aforo:comb_49|clk_s'
+Slack : -3.503
+TNS   : -23.839
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -2.709
+TNS   : -46.996
+
+Type  : Slow 1200mV 85C Model Setup 'Alarma:comb_48|clk_s'
+Slack : -2.678
+TNS   : -12.395
+
+Type  : Slow 1200mV 85C Model Setup 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -2.603
+TNS   : -18.521
+
+Type  : Slow 1200mV 85C Model Setup 'clk_s'
+Slack : -2.151
+TNS   : -2.151
+
+Type  : Slow 1200mV 85C Model Setup 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -1.901
+TNS   : -16.145
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Time:comb_44|Reloj:se|clk_s'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_aforo:comb_49|clk_s'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Alarma:comb_48|clk_s'
+Slack : 0.768
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_s'
+Slack : 1.531
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -468.431
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -1.487
+TNS   : -153.161
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -1.487
+TNS   : -153.161
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Time:comb_44|Reloj:se|clk_s'
+Slack : -1.487
+TNS   : -71.376
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -1.487
+TNS   : -43.123
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -1.487
+TNS   : -19.331
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_aforo:comb_49|clk_s'
+Slack : -1.487
+TNS   : -16.357
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Alarma:comb_48|clk_s'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_s'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'Time:comb_44|Reloj:se|clk_s'
+Slack : -6.926
+TNS   : -200.020
+
+Type  : Slow 1200mV 0C Model Setup 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -6.891
+TNS   : -607.516
+
+Type  : Slow 1200mV 0C Model Setup 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -6.706
+TNS   : -543.338
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -6.443
+TNS   : -1088.797
+
+Type  : Slow 1200mV 0C Model Setup 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -5.247
+TNS   : -95.269
+
+Type  : Slow 1200mV 0C Model Setup 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -4.958
+TNS   : -98.265
+
+Type  : Slow 1200mV 0C Model Setup 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -4.032
+TNS   : -89.934
+
+Type  : Slow 1200mV 0C Model Setup 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -3.995
+TNS   : -85.954
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_aforo:comb_49|clk_s'
+Slack : -3.052
+TNS   : -20.251
+
+Type  : Slow 1200mV 0C Model Setup 'Alarma:comb_48|clk_s'
+Slack : -2.400
+TNS   : -10.669
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -2.394
+TNS   : -40.813
+
+Type  : Slow 1200mV 0C Model Setup 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -2.348
+TNS   : -16.524
+
+Type  : Slow 1200mV 0C Model Setup 'clk_s'
+Slack : -1.894
+TNS   : -1.894
+
+Type  : Slow 1200mV 0C Model Setup 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -1.673
+TNS   : -13.735
+
+Type  : Slow 1200mV 0C Model Hold 'Time:comb_44|Reloj:se|clk_s'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_aforo:comb_49|clk_s'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Alarma:comb_48|clk_s'
+Slack : 0.712
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_s'
+Slack : 1.379
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -468.431
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -1.487
+TNS   : -153.161
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -1.487
+TNS   : -153.161
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Reloj:se|clk_s'
+Slack : -1.487
+TNS   : -71.376
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -1.487
+TNS   : -43.123
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -1.487
+TNS   : -40.149
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -1.487
+TNS   : -19.358
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_aforo:comb_49|clk_s'
+Slack : -1.487
+TNS   : -16.357
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|clk_s'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_s'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -2.748
+TNS   : -203.162
+
+Type  : Fast 1200mV 0C Model Setup 'Time:comb_44|Reloj:se|clk_s'
+Slack : -2.656
+TNS   : -66.892
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -2.525
+TNS   : -352.109
+
+Type  : Fast 1200mV 0C Model Setup 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -2.515
+TNS   : -217.051
+
+Type  : Fast 1200mV 0C Model Setup 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -1.909
+TNS   : -30.708
+
+Type  : Fast 1200mV 0C Model Setup 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -1.709
+TNS   : -30.388
+
+Type  : Fast 1200mV 0C Model Setup 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -1.340
+TNS   : -27.038
+
+Type  : Fast 1200mV 0C Model Setup 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -1.289
+TNS   : -25.154
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_aforo:comb_49|clk_s'
+Slack : -0.994
+TNS   : -5.330
+
+Type  : Fast 1200mV 0C Model Setup 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -0.580
+TNS   : -1.973
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -0.566
+TNS   : -6.525
+
+Type  : Fast 1200mV 0C Model Setup 'Alarma:comb_48|clk_s'
+Slack : -0.492
+TNS   : -1.386
+
+Type  : Fast 1200mV 0C Model Setup 'clk_s'
+Slack : -0.475
+TNS   : -0.475
+
+Type  : Fast 1200mV 0C Model Setup 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -0.295
+TNS   : -0.620
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.122
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : 0.123
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Time:comb_44|Reloj:se|clk_s'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_aforo:comb_49|clk_s'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Alarma:comb_48|clk_s'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_s'
+Slack : 0.588
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -337.409
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Obtener_Ha:ob|clk1kHz'
+Slack : -1.000
+TNS   : -103.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Obtener_H:ob|clk1kHz'
+Slack : -1.000
+TNS   : -103.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Reloj:se|clk_s'
+Slack : -1.000
+TNS   : -48.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_aforo:comb_49|Sensor_ultrasonico:comb_3|clkus'
+Slack : -1.000
+TNS   : -29.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Alarma_FSM:comb_4|clk_s'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Uart_rx:comb_3|tick'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Control:comb_45|Uart_rx:dat_con|tick'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Uart_rx:comb_3|tick'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|Display_a:comb_5|Div_fre:div|clk1kHz'
+Slack : -1.000
+TNS   : -15.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Time:comb_44|Display:comb_4|Div_fre:div|clk1kHz'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_aforo:comb_49|clk_s'
+Slack : -1.000
+TNS   : -11.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Alarma:comb_48|clk_s'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_s'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------
