@@ -6,5 +6,5 @@ Link de desmostracion del proyecto ensamblado en Youtube:
 https://youtu.be/x_OZTIZxotM
 
 Link de documento que justifica el proyecto,  y explica cada uno de los modulos:
-https://www.overleaf.com/read/mpdcsdhbvzrj
+https://drive.google.com/file/d/1SFHF790jpPTALLVg7CbJMmcI9PAo5UEg/view?usp=sharing
 
